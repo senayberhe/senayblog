@@ -1,0 +1,29 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+python-dotenv = "*"
+flask-wtf = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
+flask-login = "*"
+email-validator = "*"
+pipfile = "*"
+werkzeug = "~=2.0.0"
+flask-mail = "*"
+pyjwt = "*"
+flask-bootstrap = "*"
+flask-moment = "*"
+flask-babel = "*"
+guess-language-spirit = "*"
+requests = "*"
+elasticsearch = "*"
+langdetect = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
