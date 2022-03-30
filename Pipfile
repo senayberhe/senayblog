@@ -22,6 +22,8 @@ guess-language-spirit = "*"
 requests = "*"
 elasticsearch = "*"
 langdetect = "*"
+gunicorn = "*"
+psycopg2 = "*"
 
 [dev-packages]
 
