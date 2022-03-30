@@ -1,4 +1,4 @@
-2022-03-29 21:55:23,449 ERROR: Exception on /login [GET] [in /Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py:1455]
+2022-03-30 09:53:48,586 ERROR: Exception on / [GET] [in /Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,8 +8,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1509, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/routes.py", line 50, in login
-    return redirect(next_page)
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    pass
+  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/routes.py", line 37, in index
+    return render_template('index.html', title='Home', form=form,
   File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/templating.py", line 148, in render_template
     return _render(
   File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
@@ -18,80 +20,86 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/jinja2/environment.py", line 926, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/templates/login.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/templates/base.html", line 32, in top-level template code
-    {% block content %}{% endblock %}
-  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/templates/login.html", line 27, in block 'content'
-    <a href="{{ url_for('reset_password_request') }}">Click to Reset It</a>
+  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 21, in block 'body'
+    {% block navbar %}
+  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/templates/base.html", line 21, in block 'navbar'
+    <li><a href="{{ url_for('index') }}">{{ _('Home') }}</a></li>
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/jinja2/ext.py", line 167, in _gettext_alias
+    return __context.call(__context.resolve("gettext"), *args, **kwargs)
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/jinja2/ext.py", line 173, in gettext
+    rv = __context.call(func, __string)
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_babel/__init__.py", line 109, in <lambda>
+    lambda x: get_translations().ugettext(x),
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_babel/__init__.py", line 209, in get_translations
+    return get_domain().get_translations()
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_babel/__init__.py", line 554, in get_translations
+    locale = get_locale()
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_babel/__init__.py", line 226, in get_locale
+    rv = babel.locale_selector_func()
+  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py", line 57, in get_locale
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+KeyError: 'LANGUAGES'
+2022-03-30 10:05:26,926 INFO: Myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:52]
+2022-03-30 10:05:40,700 INFO: Myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:52]
+2022-03-30 10:05:56,534 INFO: Myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:52]
+2022-03-30 10:12:52,384 INFO: Myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:52]
+2022-03-30 10:13:00,528 INFO: Myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:52]
+2022-03-30 13:12:27,605 INFO: Myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:74]
+2022-03-30 13:13:03,356 ERROR: Exception on / [GET] [in /Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_login/utils.py", line 277, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/main/routes.py", line 45, in index
+    return render_template('index.html', title=_('Home'), form=form,
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/templating.py", line 148, in render_template
+    return _render(
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/jinja2/environment.py", line 1291, in render
+    self.environment.handle_exception()
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/jinja2/environment.py", line 926, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/templates/base.html", line 48, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/templates/index.html", line 11, in block 'app_content'
+    {% include '_post.html' %}
+  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/templates/_post.html", line 4, in top-level template code
+    <a href="{{ url_for('user', username=post.author.username) }}">
   File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/helpers.py", line 336, in url_for
     return appctx.app.handle_url_build_error(error, endpoint, values)
   File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/helpers.py", line 323, in url_for
     rv = url_adapter.build(
   File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/werkzeug/routing.py", line 2315, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'reset_password_request'. Did you mean 'edit_profile' instead?
-2022-03-29 22:38:43,941 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:48]
-2022-03-29 22:39:11,333 ERROR: Exception on /user/sunny [GET] [in /Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1525, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1523, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1509, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/routes.py", line 81, in user
-    page, app.config['POSTER_PER_PAGE'], False
-KeyError: 'POSTER_PER_PAGE'
-2022-03-29 22:50:58,787 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:48]
-2022-03-29 23:03:39,852 ERROR: Exception on /user/sunny [GET] [in /Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1525, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1523, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1509, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/routes.py", line 81, in user
-    def register():
-KeyError: 'POSTER_PER_PAGE'
-2022-03-29 23:04:11,841 ERROR: Exception on /user/sunny [GET] [in /Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1525, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1523, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1509, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/routes.py", line 81, in user
-    def register():
-KeyError: 'POSTER_PER_PAGE'
-2022-03-29 23:05:20,066 ERROR: Exception on /user/miguel [GET] [in /Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1525, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1523, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask/app.py", line 1509, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/senayberhe/Documents/project/flask_works/myblog/app/routes.py", line 81, in user
-    def register():
-KeyError: 'POSTER_PER_PAGE'
-2022-03-29 23:11:53,962 INFO: Microblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:52]
-2022-03-30 09:53:43,520 INFO: Microblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:52]
+werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['username']. Did you mean 'main.user' instead?
+2022-03-30 14:21:40,374 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:82]
