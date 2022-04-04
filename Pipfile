@@ -24,6 +24,11 @@ elasticsearch = "*"
 langdetect = "*"
 gunicorn = "*"
 psycopg2 = "*"
+rq = "*"
+redis = "*"
+jinja2 = "*"
+httpie = "*"
+flask-httpauth = "*"
 
 [dev-packages]
 

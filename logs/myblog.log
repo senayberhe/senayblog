@@ -45,3 +45,17 @@ Traceback (most recent call last):
   File "/Users/senayberhe/.local/share/virtualenvs/myblog-4xgKrrfF/lib/python3.9/site-packages/werkzeug/routing.py", line 2315, in build
     raise BuildError(endpoint, values, method, self)
 werkzeug.routing.BuildError: Could not build url for endpoint 'user' with values ['username']. Did you mean 'main.user' instead?
+2022-03-30 14:32:38,759 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:82]
+2022-03-30 14:32:44,843 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:82]
+2022-03-30 14:42:03,232 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:82]
+2022-03-30 15:19:06,470 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:82]
+2022-03-30 15:19:12,317 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:82]
+2022-03-30 16:04:27,150 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:82]
+2022-03-30 16:04:33,907 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:82]
+2022-03-30 22:00:02,548 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:86]
+2022-03-30 22:00:53,335 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:86]
+2022-03-30 22:07:37,459 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:86]
+2022-03-30 22:08:56,603 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:86]
+2022-03-30 22:13:16,178 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:86]
+2022-03-30 22:57:00,629 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:89]
+2022-03-30 22:57:07,485 INFO: myblog startup [in /Users/senayberhe/Documents/project/flask_works/myblog/app/__init__.py:89]
