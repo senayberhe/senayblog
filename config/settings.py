@@ -20,7 +20,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['senayblog.up.railway.app', '127.0.0.1' ]
+ALLOWED_HOSTS = ['senayblog.herokuapp.com', '127.0.0.1' ]
 
 # CSRF_TRUSTED_ORIGINS = ['https://web-production-ce8a.up.railway.app']
 # Application definition
