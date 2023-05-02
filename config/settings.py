@@ -20,7 +20,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sunny23.pythonanywhere.com', '127.0.0.1', '*' ]
+ALLOWED_HOSTS = ['https://senayblog.vercel.app', '127.0.0.1', '*' ]
 
 
 # Application definition
@@ -84,28 +84,28 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 
 
+
+
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'production_db',
-#         'USER': 'user',
-#         'PASSWORD': 'password',
-#         'HOST': 'db.example.com',
-#         'PORT': '5432',
-#         'OPTIONS': {
-#             'sslmode': 'require'
-#         }
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
 
-
-
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': os.getenv('POSTGRES_URL'),
+        'NAME': os.getenv('PGNAME'),
+        'USER': os.getenv('PGUSER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('PGHOST'),
+        'PORT': os.getenv('PGPORT),
+    }
 }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
