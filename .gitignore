@@ -3,3 +3,7 @@ __pycache__
 .vscode
 config/.env
 .vercel
+config/settings.py
+fly.toml
+.dockerignore
+Dockerfile

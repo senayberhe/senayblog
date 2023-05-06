@@ -20,7 +20,9 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'senayblog.fly.dev']
+
+CSRF_TRUSTED_ORIGINS = ["https://*.fly.dev"] 
 
 
 # Application definition
@@ -86,11 +88,15 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 
 
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
+
 # DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
+#     "default": env.dj_db_url("DATABASE_URL", default="sqlite:///db.sqlite3"),
 # }
 
 # DATABASES = {
@@ -105,7 +111,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 #     }
 # }
 
-DATABASES = {}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -163,6 +169,3 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
