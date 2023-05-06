@@ -30,4 +30,4 @@ Usage
 
 Credits
 
-This blog application was built using Django Framework by [Your Name Here]. Special thanks to the Django documentation and django-taggit for their contributions to the project.
+This blog application was built using Django Framework Special thanks to the Django documentation and django-taggit for their contributions to the project.
